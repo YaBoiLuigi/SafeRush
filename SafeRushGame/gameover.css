@@ -1,0 +1,122 @@
+.gameover-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('NoMoeMoneyBG.png');
+  background-repeat: repeat-y;
+  background-size: cover;
+  animation: scroll-background 99999999999999999999999999999999999991s linear infinite;
+}
+
+.gameover-text {
+  color: #000000;
+  font-family: 'PixelFont', Arial, sans-serif;
+  font-size: 100px;
+  text-align: center;
+  opacity: 0;
+  animation: fade-in-out 3.5s ease-in-out forwards;
+}
+
+.score-text {
+  color: #000000;
+  font-family: 'PixelFont', Arial, sans-serif;
+  font-size: 70px;
+  text-align: center;
+  opacity: 0;
+  margin-bottom: 20px;
+  animation: fade-in 2s ease-in-out forwards;
+}
+
+.fade-in-image {
+  opacity: 0;
+  animation: fade-in 2s ease-in-out forwards;
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 10px;
+}
+
+.restart-text {
+  color: #000000;
+  font-family: 'PixelFont', Arial, sans-serif;
+  font-size: 20px;
+  text-align: center;
+  opacity: 0;
+  animation: fade-in 2s ease-in-out forwards, blink 2s infinite;
+}
+
+.falling-object {
+  position: absolute;
+  top: -100px;
+  left: -100px; /* Updated: Start the objects outside the screen */
+  width: 50px; /* Adjust the size of the falling objects */
+  height: 50px; /* Adjust the size of the falling objects */
+  background-image: url('SafeFullOfMONEY.png'); /* Replace with the PNG image for the falling objects */
+  background-size: cover;
+  animation: fall linear infinite; /* Remove the explicit animation duration */
+}
+
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  5% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes scroll-background {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 99999999999999999999999999999999999999999999999999999999%;
+  }
+}
+
+@keyframes fall {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 100vh;
+  }
+}
